@@ -23,7 +23,7 @@ export default function middleware(req) {
   }
 
   if (!pathname.includes(".") && !pathname.startsWith("/api")) {
-    if (currentHost == "app") {
+    if (currentHost == "app" || currentHost == "app-stg") {
       if (
         pathname === "/login" &&
         (req.cookies["next-auth.session-token"] ||
